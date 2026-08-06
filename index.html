@@ -835,6 +835,15 @@
     }catch(e){}
   })();
 
+  // pass the visitor's first name to the thank-you page so it can greet them personally
+  document.getElementById('leadForm').addEventListener('submit', function(){
+    try{
+      var first = (document.getElementById('name').value || '').trim().split(/\s+/)[0];
+      var r = document.querySelector('#leadForm input[name="redirect"]');
+      if(first && r){ r.value = 'https://stopmyauctionflorida.com/thanks.html?name=' + encodeURIComponent(first.slice(0, 24)); }
+    }catch(e){}
+  });
+
   // filled-field reward: completed boxes turn gold with a check when the visitor moves to the next one
   (function(){
     var fields = document.querySelectorAll('#leadForm .field input, #leadForm .field select');
