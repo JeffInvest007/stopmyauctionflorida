@@ -3,7 +3,7 @@
   Stop My Auction Florida  |  stopmyauctionflorida.com
   Probate Assets Elite, LLC  |  (786) 920-7419
   Foreclosure and tax deed cash-purchase landing page.
-  Lead form delivers to probateassetselite@gmail.com via FormSubmit.co.
+  Lead form delivers via Web3Forms.
 -->
 <html lang="en">
 <head>
@@ -716,14 +716,12 @@
       </p>
     </div>
     <div class="form-card reveal">
-      <!-- Lead form: FormSubmit.co delivers every submission to probateassetselite@gmail.com.
-           IMPORTANT: the very first submission triggers a one-time activation email to that inbox.
-           Open it and click the confirmation link once, and all leads flow from then on. -->
-      <form id="leadForm" action="https://formsubmit.co/probateassetselite@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="NEW AUCTION LEAD - stopmyauctionflorida.com" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://stopmyauctionflorida.com/thanks.html" />
+      <!-- Lead form: Web3Forms delivers every submission to the inbox tied to the access key. No activation needed. -->
+      <form id="leadForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="bb4f879d-4961-4a90-8ad2-336fb9b12315" />
+        <input type="hidden" name="subject" value="NEW AUCTION LEAD - stopmyauctionflorida.com" />
+        <input type="hidden" name="from_name" value="Stop My Auction Florida" />
+        <input type="hidden" name="redirect" value="https://stopmyauctionflorida.com/thanks.html" />
         <input type="hidden" name="lead_source" id="leadSource" value="direct visit" />
         <h3>Request my offer</h3>
         <p class="sub">Takes about a minute.</p>
@@ -760,8 +758,8 @@
             <option>Other</option>
           </select>
         </div>
-        <!-- honeypot (FormSubmit spam trap) -->
-        <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label></div>
+        <!-- honeypot (Web3Forms spam trap) -->
+        <div class="hp" aria-hidden="true"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></div>
         <button type="submit" class="btn btn-primary">Get My Cash Offer</button>
         <p class="fineprint">By submitting, you agree to be contacted about your property by phone, text, or email. This is not an offer to purchase, a guarantee that any sale can be stopped, or legal, tax, or financial advice.</p>
       </form>
