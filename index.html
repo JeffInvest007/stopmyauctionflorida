@@ -114,7 +114,7 @@
   .brand{display:flex;align-items:center;gap:12px}
   .brand-logo{height:46px;width:auto;display:block}
   .brand-badge{width:42px;height:42px;border-radius:11px;background:var(--green);color:var(--gold-soft);
-    display:grid;place-items:center;font-family:'Fraunces';font-weight:700;font-size:1.05rem;letter-spacing:.02em}
+    display:grid;place-items:center;font-family:'Fraunces';font-weight:700;font-size:1.05rem;letter-spacing:.02em;flex:none}
   .brand-name{font-family:'Fraunces';font-weight:600;font-size:1.12rem;color:var(--green);line-height:1.05}
   .brand-name small{display:block;font-family:'Inter';font-weight:500;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .nav-cta{display:flex;align-items:center;gap:18px}
@@ -335,8 +335,8 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Probate Assets Elite, LLC",
-  "alternateName": "Stop My Auction Florida",
+  "name": "Stop My Auction Florida",
+  "parentOrganization": { "@type": "Organization", "name": "Probate Assets Elite, LLC" },
   "url": "https://stopmyauctionflorida.com/",
   "logo": "https://stopmyauctionflorida.com/assets/logo.png",
   "image": "https://stopmyauctionflorida.com/assets/og-image.jpg",
@@ -368,10 +368,9 @@
 <!-- ===================== NAV ===================== -->
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top" aria-label="Probate Assets Elite home">
-      <img class="brand-logo" src="assets/logo.png" alt="Probate Assets Elite logo" width="299" height="360" onerror="this.style.display='none';var b=document.getElementById('brandBadge');if(b)b.style.display='grid'">
-      <span class="brand-badge" id="brandBadge" style="display:none">PAE</span>
-      <span class="brand-name">Probate Assets Elite<small>Florida Real Estate Solutions</small></span>
+    <a class="brand" href="#top" aria-label="Stop My Auction Florida home">
+      <span class="brand-badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11.5L12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="brand-name">Stop My Auction Florida<small>Sell Before the Sale Date</small></span>
     </a>
     <div class="nav-cta">
       <div class="nav-phone">
@@ -708,12 +707,11 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="brand" style="margin-bottom:14px">
-          <!-- Logo sits on a cream chip so the dark artwork stays visible on the dark footer -->
-          <span class="foot-logo-chip"><img src="assets/logo.png" alt="Probate Assets Elite logo" width="299" height="360" onerror="this.parentNode.style.display='none';var b=document.getElementById('brandBadgeFoot');if(b)b.style.display='grid'"></span>
-          <span class="brand-badge" id="brandBadgeFoot" style="display:none">PAE</span>
-          <span class="brand-name" style="color:#fff">Probate Assets Elite<small style="color:#7E978D">Florida Real Estate Solutions</small></span>
+          <!-- Operator logo sits on a cream chip so the dark artwork stays visible on the dark footer -->
+          <span class="foot-logo-chip"><img src="assets/logo.png" alt="Probate Assets Elite, LLC logo" width="299" height="360" onerror="this.parentNode.style.display='none'"></span>
+          <span class="brand-name" style="color:#fff">Stop My Auction Florida<small style="color:#7E978D">A Service of Probate Assets Elite, LLC</small></span>
         </div>
-        <p style="max-width:34em">Helping Florida homeowners and families navigate probate, foreclosure, and tax deed situations with speed, fairness, and respect.</p>
+        <p style="max-width:34em">Stop My Auction Florida is a service of Probate Assets Elite, LLC, a Florida real estate company helping homeowners and families navigate probate, foreclosure, and tax deed situations with speed, fairness, and respect.</p>
       </div>
       <div>
         <h4>Contact</h4>
