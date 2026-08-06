@@ -10,7 +10,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Stop My Auction Florida | Sell Your Home for Cash Before the Foreclosure or Tax Deed Sale</title>
-<meta name="description" content="Facing a Florida foreclosure or tax deed auction? We buy homes for cash before the sale date so you can keep your equity, protect your credit, and move on. Fast, fair, no fees." />
+<meta name="description" content="Facing a Florida foreclosure or tax deed auction? We buy homes for cash before the sale date, pay off your back taxes at closing, and help you keep your equity and walk away with cash. Fast, fair, no fees." />
 <link rel="canonical" href="https://stopmyauctionflorida.com/" />
 <meta name="theme-color" content="#123F38" />
 
@@ -36,7 +36,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-<link rel="preload" as="image" href="https://images.pexels.com/photos/30433180/pexels-photo-30433180/free-photo-of-suburban-neighborhood-with-palm-trees-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1000&h=820&fit=crop" />
+<link rel="preload" as="image" href="assets/hero.jpg" />
 <!-- Fonts are self-hosted: faster first paint, no third-party request -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-var.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/inter-var.woff2" />
@@ -136,6 +136,16 @@
   .hero h1{font-size:clamp(2.4rem,5vw,3.7rem);color:#fff;margin:18px 0 18px}
   .hero h1 .accent{color:var(--gold-soft)}
   .hero p.lede{font-size:1.18rem;color:#D9E2DC;max-width:36em}
+  /* Glowing promise banner: behind on taxes, we pay them off at closing */
+  .hero-promise{display:flex;align-items:flex-start;gap:14px;margin-top:24px;max-width:38em;padding:15px 18px;
+    background:linear-gradient(90deg,rgba(194,144,44,.22),rgba(194,144,44,.05));
+    border:1px solid rgba(231,199,126,.45);border-left:4px solid var(--gold);border-radius:12px;color:#F2E9D6;
+    animation:heroGlow 2.4s ease-in-out infinite}
+  .hero-promise .hp-icon{flex:none;width:40px;height:40px;border-radius:10px;background:var(--gold);color:var(--green-900);display:grid;place-items:center}
+  .hero-promise strong{color:#fff;font-weight:700}
+  .hero-promise p{font-size:1rem;line-height:1.5;margin:0}
+  @keyframes heroGlow{0%,100%{box-shadow:0 0 0 0 rgba(231,199,126,0);border-color:rgba(231,199,126,.4)}50%{box-shadow:0 0 26px 2px rgba(231,199,126,.6);border-color:rgba(231,199,126,.98)}}
+  @media (prefers-reduced-motion: reduce){.hero-promise{animation:none}}
   .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
   .hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
   .hero-trust div{display:flex;align-items:center;gap:9px;font-size:.92rem;color:#CBD6CF;font-weight:500}
@@ -155,6 +165,11 @@
   .photo-hint{font-size:.86rem;line-height:1.5}
   .photo-hint strong{display:block;color:#fff;font-size:1rem;margin-bottom:6px;font-family:'Fraunces'}
   .ico-frame{width:54px;height:54px;border-radius:50%;border:2px dashed rgba(255,255,255,.4);display:grid;place-items:center;margin:0 auto 14px}
+  /* Gavel badge over the hero photo: winds up and strikes like a gavel hitting the desk */
+  .gavel-badge{position:absolute;right:16px;bottom:16px;z-index:3;width:54px;height:54px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;box-shadow:0 10px 22px rgba(0,0,0,.4)}
+  .gavel-badge svg{transform-origin:27% 83%;animation:gavelStrike 2.6s ease-in-out infinite}
+  @keyframes gavelStrike{0%,50%{transform:rotate(0)}60%{transform:rotate(-26deg)}70%{transform:rotate(9deg)}76%{transform:rotate(-5deg)}82%{transform:rotate(3deg)}88%{transform:rotate(-1.5deg)}94%,100%{transform:rotate(0)}}
+  @media (prefers-reduced-motion: reduce){.gavel-badge svg{animation:none}}
   /* Mobile: headline first, photo after. The first screen sells; the photo supports. */
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px;padding:44px 24px 64px}.hero-photo{min-height:260px}}
   @media(max-width:480px){
@@ -198,10 +213,15 @@
   /* ===================== HOW IT WORKS ===================== */
   .how{background:var(--sand)}
   .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .how-step{background:var(--paper);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);position:relative}
+  .how-step{background:var(--paper);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);position:relative;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
   .how-step .num{font-family:'Fraunces';font-weight:700;font-size:2.4rem;color:var(--gold-soft);line-height:1}
-  .how-step h3{font-size:1.18rem;color:var(--green);margin:8px 0 8px}
-  .how-step p{font-size:.96rem;color:var(--muted)}
+  .how-step h3{font-size:1.18rem;color:var(--green);margin:8px 0 8px;transition:color .2s ease}
+  .how-step p{font-size:.96rem;color:var(--muted);transition:color .2s ease}
+  /* Hover: card pops up and flips to brand green */
+  .how-step:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(18,63,56,.24);background:var(--green)}
+  .how-step:hover h3{color:#fff}
+  .how-step:hover p{color:#D9E2DC}
+  .how-step:hover .num{color:var(--gold-soft)}
   @media(max-width:900px){.how-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:540px){.how-grid{grid-template-columns:1fr}}
 
@@ -237,6 +257,12 @@
   .table .cell.label{font-weight:600;color:#fff;background:rgba(0,0,0,.10)}
   .table .good svg{color:var(--gold-soft)}
   .table .bad svg{color:#E9A99A}
+  /* Interactive rows: hover, tap, or focus any row and the whole horizontal row reacts */
+  .table .row:not(.head){transition:background .2s ease}
+  .table .row:not(.head):hover,.table .row:not(.head):focus-within,.table .row:not(.head):active{background:rgba(255,255,255,.06)}
+  .table .good svg,.table .bad svg{transition:transform .2s ease,color .2s ease,filter .2s ease;transform-origin:center}
+  .table .row:not(.head):hover .good svg,.table .row:not(.head):focus-within .good svg,.table .row:not(.head):active .good svg{color:#fff;transform:scale(1.55);filter:drop-shadow(0 3px 7px rgba(0,0,0,.5))}
+  .table .row:not(.head):hover .bad svg,.table .row:not(.head):focus-within .bad svg,.table .row:not(.head):active .bad svg{color:#F5402B;transform:scale(1.55);filter:drop-shadow(0 3px 7px rgba(0,0,0,.5))}
   @media(max-width:760px){
     .table .row{grid-template-columns:1fr}
     .table .cell.label{background:rgba(0,0,0,.22)}
@@ -253,7 +279,16 @@
   .why-ico{flex:none;width:48px;height:48px;border-radius:12px;background:var(--sand);display:grid;place-items:center;color:var(--green)}
   .why-item h3{font-size:1.12rem;color:var(--green);margin-bottom:2px}
   .why-item p{font-size:.96rem;color:var(--muted)}
+  /* Hover a specialists row: icon pops and flips, words recolor */
+  .why-item .why-ico{transition:transform .18s ease,background .18s ease,color .18s ease}
+  .why-item h3,.why-item p{transition:color .18s ease}
+  .why-item:hover .why-ico{background:var(--green);color:var(--gold-soft);transform:translateY(-3px) scale(1.08)}
+  .why-item:hover h3{color:var(--terra)}
+  .why-item:hover p{color:var(--ink)}
   .why-photo{border-radius:var(--radius);aspect-ratio:4/5;background:var(--sand);border:1px solid var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);box-shadow:var(--shadow)}
+  /* At-a-glance checks: hover a line and its check pops out and turns green */
+  .glance-list > div svg{transition:transform .18s ease,stroke .18s ease,filter .18s ease;transform-origin:center}
+  .glance-list > div:hover svg{stroke:var(--green);transform:scale(1.55);filter:drop-shadow(0 2px 6px rgba(18,63,56,.35))}
   @media(max-width:880px){.why-grid{grid-template-columns:1fr;gap:30px}.why-photo{aspect-ratio:16/10;order:-1}}
 
   /* ===================== TESTIMONIALS ===================== */
@@ -270,7 +305,10 @@
 
   /* ===================== FAQ ===================== */
   .faq-wrap{max-width:820px;margin:0 auto}
-  details.faq{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  details.faq{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  details.faq:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(18,63,56,.16);border-color:var(--gold)}
+  details.faq:hover summary{color:var(--green-700)}
+  details.faq:hover summary .plus{background:var(--terra);color:#fff}
   details.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:'Fraunces';font-weight:600;font-size:1.1rem;color:var(--green);display:flex;justify-content:space-between;align-items:center;gap:16px}
   details.faq summary::-webkit-details-marker{display:none}
   details.faq summary .plus{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sand);display:grid;place-items:center;color:var(--terra);font-weight:700;transition:transform .2s}
@@ -292,6 +330,17 @@
   .field input,.field select,.field textarea{
     width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:.98rem;background:#fff;color:var(--ink);transition:border .15s}
   .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green)}
+  /* Filled-field reward: when a box is completed and the visitor moves on, it turns warm gold and earns a check */
+  .field input.filled,.field select.filled{
+    background-color:#FBF3DF;border-color:var(--gold);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2902C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>");
+    background-repeat:no-repeat;background-position:right 12px center;background-size:18px;
+    padding-right:40px;
+    transition:background-color .25s ease,border-color .25s ease;
+    animation:checkPop .3s ease}
+  .field select.filled{background-position:right 34px center;padding-right:56px}
+  .field input[type="date"].filled{background-position:right 36px center;padding-right:58px}
+  @keyframes checkPop{0%{background-size:0px}60%{background-size:22px}100%{background-size:18px}}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   .form-card .btn-primary{width:100%;margin-top:6px}
@@ -389,6 +438,10 @@
       <span class="eyebrow">Florida Foreclosure &amp; Tax Deed Solutions</span>
       <h1>Facing an Auction Date? <span class="accent">Keep Your Equity.</span> Walk Away With Cash.</h1>
       <p class="lede">If your Florida home is scheduled for a foreclosure or tax deed sale, you may still have time to take control. We buy homes for cash before the auction so you can pay off what's owed, protect the equity you've built, and move forward with your head held high.</p>
+      <div class="hero-promise">
+        <span class="hp-icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg></span>
+        <p><strong>Behind on property taxes?</strong> We pay off your back taxes at closing, before the county's tax deed sale, so you clear the debt, keep your equity, and walk away with cash.</p>
+      </div>
       <div class="hero-cta">
         <a href="#offer" class="btn btn-primary">Get My Free Cash Offer</a>
                 <a href="tel:+17869207419" class="btn btn-outline-light">Call or Text (786) 920-7419</a>
@@ -403,7 +456,8 @@
     <!-- HERO PHOTO (Pexels, free for commercial use, no attribution required). Swap the src to change it. -->
     <div class="hero-photo reveal in" style="overflow:visible">
       <span class="ribbon" style="z-index:3">Before the gavel falls</span>
-      <img src="https://images.pexels.com/photos/30433180/pexels-photo-30433180/free-photo-of-suburban-neighborhood-with-palm-trees-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1000&h=820&fit=crop" alt="Warm sunlit Florida neighborhood with palm trees at sunset" width="1000" height="820" fetchpriority="high" decoding="async" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius);z-index:1">
+      <img src="assets/hero.jpg" alt="Well-kept family home at dusk with warm lights in the windows" width="1080" height="620" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:var(--radius);z-index:1">
+      <span class="gavel-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 12.5-8 8a2.119 2.119 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg></span>
     </div>
   </div>
 </section>
@@ -484,7 +538,7 @@
     <div class="cases">
       <div class="case reveal">
         <!-- FORECLOSURE PHOTO (Pexels, free for commercial use). Swap the src to change it. -->
-        <div class="photo-slot"><img src="https://images.pexels.com/photos/30332492/pexels-photo-30332492/free-photo-of-hand-holding-keys-in-front-of-a-new-home-door.jpeg?auto=compress&cs=tinysrgb&w=820&h=460&fit=crop" alt="Hand holding house keys in front of an open front door" width="820" height="460" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="photo-slot"><img src="assets/case-foreclosure.jpg" alt="Hand holding house keys in front of an open front door" width="820" height="460" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="case-body">
           <h3>Foreclosure auction</h3>
           <p>Behind on the mortgage with a court-ordered sale date approaching? We move fast to get you out from under the debt.</p>
@@ -498,10 +552,11 @@
       </div>
       <div class="case reveal">
         <!-- TAX DEED PHOTO (Pexels, free for commercial use). Swap the src to change it. -->
-        <div class="photo-slot"><img src="https://images.pexels.com/photos/7111516/pexels-photo-7111516.jpeg?auto=compress&cs=tinysrgb&w=820&h=460&fit=crop" alt="Calculator, pens, and a folder labeled Taxes" width="820" height="460" loading="lazy" decoding="async" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="photo-slot"><img src="assets/case-taxdeed.jpg" alt="Calculator, pens, and a folder labeled Taxes" width="820" height="460" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="case-body">
           <h3>Tax deed sale</h3>
           <p>Owe back property taxes and the county has set a tax deed auction? You can often still redeem and sell before it's gone.</p>
+          <p style="margin-top:6px;padding:12px 14px;background:var(--sand);border-left:4px solid var(--gold);border-radius:10px;color:var(--green-700);font-weight:600">Our promise: we pay off your back taxes at closing.</p>
           <ul>
             <li>Cash to clear the tax debt and redeem the property</li>
             <li>Close before the clerk's tax deed sale</li>
@@ -586,7 +641,7 @@
     <!-- At-a-glance credibility panel -->
     <div class="why-photo reveal" style="aspect-ratio:auto;display:block;background:var(--paper);padding:32px;text-align:left">
       <h3 style="font-family:'Fraunces',Georgia,serif;color:var(--green);font-size:1.4rem;margin-bottom:20px">At a glance</h3>
-      <div style="display:grid;gap:16px">
+      <div class="glance-list" style="display:grid;gap:16px">
         <div style="display:flex;gap:12px;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.6" style="flex:none;margin-top:3px"><path d="M20 6L9 17l-5-5"/></svg><span style="font-size:1rem;color:var(--ink)"><b>Close in as little as 7 to 14 days</b><br><span style="color:var(--muted);font-size:.92rem">Built to beat your auction date</span></span></div>
         <div style="display:flex;gap:12px;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.6" style="flex:none;margin-top:3px"><path d="M20 6L9 17l-5-5"/></svg><span style="font-size:1rem;color:var(--ink)"><b>$0 fees or commissions to you</b><br><span style="color:var(--muted);font-size:.92rem">Sell as-is, no repairs</span></span></div>
         <div style="display:flex;gap:12px;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.6" style="flex:none;margin-top:3px"><path d="M20 6L9 17l-5-5"/></svg><span style="font-size:1rem;color:var(--ink)"><b>Foreclosure &amp; tax deed</b><br><span style="color:var(--muted);font-size:.92rem">Statewide across Florida</span></span></div>
@@ -672,12 +727,12 @@
         <input type="hidden" name="lead_source" id="leadSource" value="direct visit" />
         <h3>Request my offer</h3>
         <p class="sub">Takes about a minute.</p>
-        <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe" /></div>
+        <div class="field"><label for="name">Full name <span style="color:var(--terra)">*</span></label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe" /></div>
         <div class="row2">
-          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="(000) 000-0000" /></div>
+          <div class="field"><label for="phone">Phone <span style="color:var(--terra)">*</span></label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="(000) 000-0000" /></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" /></div>
         </div>
-        <div class="field"><label for="address">Property address</label><input id="address" name="address" type="text" required autocomplete="street-address" placeholder="Street, City, FL" /></div>
+        <div class="field"><label for="address">Property address <span style="color:var(--terra)">*</span></label><input id="address" name="address" type="text" required autocomplete="street-address" placeholder="Street, City, FL" /></div>
         <div class="row2">
           <div class="field"><label for="situation">Situation</label>
             <select id="situation" name="situation">
@@ -691,6 +746,18 @@
             </select>
           </div>
           <div class="field"><label for="saledate">Auction / sale date (if known)</label><input id="saledate" name="saledate" type="date" /></div>
+        </div>
+        <div class="field"><label for="hearabout">How did you hear about us? <span style="color:var(--terra)">*</span></label>
+          <select id="hearabout" name="how_did_you_hear" required>
+            <option value="">Select one...</option>
+            <option>Letter in the mail</option>
+            <option>Postcard</option>
+            <option>Email</option>
+            <option>Google search</option>
+            <option>Facebook or social media</option>
+            <option>Friend or family referral</option>
+            <option>Other</option>
+          </select>
         </div>
         <!-- honeypot (FormSubmit spam trap) -->
         <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label></div>
@@ -767,6 +834,17 @@
       var s = p.get('src') || p.get('utm_source');
       if(s){ document.getElementById('leadSource').value = s.slice(0,80); }
     }catch(e){}
+  })();
+
+  // filled-field reward: completed boxes turn gold with a check when the visitor moves to the next one
+  (function(){
+    var fields = document.querySelectorAll('#leadForm .field input, #leadForm .field select');
+    fields.forEach(function(f){
+      function mark(){ f.classList.toggle('filled', !!f.value && String(f.value).trim() !== ''); }
+      f.addEventListener('blur', mark);
+      f.addEventListener('change', mark);
+      f.addEventListener('input', function(){ if(f.classList.contains('filled')) mark(); });
+    });
   })();
 </script>
 </body>
