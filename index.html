@@ -340,6 +340,10 @@
     animation:checkPop .3s ease}
   .field select.filled{background-position:right 34px center;padding-right:56px}
   .field input[type="date"].filled{background-position:right 36px center;padding-right:58px}
+  .field textarea.filled{background-color:#FBF3DF;border-color:var(--gold);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2902C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>");
+    background-repeat:no-repeat;background-position:right 12px top 12px;background-size:18px;padding-right:40px;
+    transition:background-color .25s ease,border-color .25s ease;animation:checkPop .3s ease}
   @keyframes checkPop{0%{background-size:0px}60%{background-size:22px}100%{background-size:18px}}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
@@ -728,7 +732,7 @@
         <div class="field"><label for="name">Full name <span style="color:var(--terra)">*</span></label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe" /></div>
         <div class="row2">
           <div class="field"><label for="phone">Phone <span style="color:var(--terra)">*</span></label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="(000) 000-0000" /></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" /></div>
+          <div class="field"><label for="email">Email <span style="color:var(--terra)">*</span></label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" /></div>
         </div>
         <div class="field"><label for="address">Property address <span style="color:var(--terra)">*</span></label><input id="address" name="address" type="text" required autocomplete="street-address" placeholder="Street, City, FL" /></div>
         <div class="row2">
@@ -745,6 +749,7 @@
           </div>
           <div class="field"><label for="saledate">Auction / sale date (if known)</label><input id="saledate" name="saledate" type="date" /></div>
         </div>
+        <div class="field"><label for="notes">Anything else you want us to know</label><textarea id="notes" name="anything_else" rows="3" placeholder="Optional. The more we know, the better we can help."></textarea></div>
         <div class="field"><label for="hearabout">How did you hear about us? <span style="color:var(--terra)">*</span></label>
           <select id="hearabout" name="how_did_you_hear" required>
             <option value="">Select one...</option>
@@ -846,7 +851,7 @@
 
   // filled-field reward: completed boxes turn gold with a check when the visitor moves to the next one
   (function(){
-    var fields = document.querySelectorAll('#leadForm .field input, #leadForm .field select');
+    var fields = document.querySelectorAll('#leadForm .field input, #leadForm .field select, #leadForm .field textarea');
     fields.forEach(function(f){
       function mark(){ f.classList.toggle('filled', !!f.value && String(f.value).trim() !== ''); }
       f.addEventListener('blur', mark);
