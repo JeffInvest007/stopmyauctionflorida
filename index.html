@@ -413,6 +413,11 @@
   .cityhalf{width:25%;height:100%;flex:none;
     background:url('assets/miami-skyline.webp') center bottom/cover no-repeat}
   .cityhalf.flip{transform:scaleX(-1)}
+  /* a single jet, always nose-first into the direction of travel */
+  .flyer{position:absolute;top:15%;left:100%;width:44px;z-index:0;pointer-events:none;opacity:.42;
+    animation:flyBy 26s linear infinite;will-change:transform}
+  .flyer svg{display:block;width:100%;height:auto;fill:#1C1206}
+  @keyframes flyBy{from{transform:translate(50vw,0)}to{transform:translate(calc(-150vw - 60px),30px)}}
   .cityscrim{position:absolute;inset:0;z-index:0;pointer-events:none;
     background:linear-gradient(100deg,rgba(18,13,9,.42) 0%,rgba(18,13,9,.20) 30%,rgba(18,13,9,.48) 58%,rgba(18,13,9,.66) 100%)}
   /* warm haze where the skyline meets the sky */
@@ -428,11 +433,11 @@
   .meet-lede{color:#E6D8BF;font-size:1.08rem;margin-bottom:14px;max-width:36em}
   .meet-sign{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--gold-soft);margin-top:18px}
   .meet-sign small{display:block;font-family:'Inter';font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#CBB088;margin-top:2px}
-  @media (prefers-reduced-motion: reduce){.meet-disk,.cityscroll{animation:none}
+  @media (prefers-reduced-motion: reduce){.meet-disk,.cityscroll,.flyer{animation:none}
     .meet-photo img,.meet-photo.in img{opacity:1;transform:none;transition:none}}
   @media(max-width:880px){.meet-grid{grid-template-columns:1fr;gap:26px}.meet-photo{min-height:400px}.meet-photo img{max-height:420px}
     .meet-disk{width:330px;height:330px}.meet-ring{width:300px;height:300px}
-    .cityhaze{height:230px}}
+    .cityhaze{height:230px}.flyer{width:30px;top:11%}}
 
   /* reveal-on-scroll (degrades gracefully without JS) */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
@@ -745,6 +750,7 @@
 <!-- ===================== MEET COACH JEFF ===================== -->
 <section class="meet">
   <div class="cityscroll" aria-hidden="true"><span class="cityhalf"></span><span class="cityhalf flip"></span><span class="cityhalf"></span><span class="cityhalf flip"></span></div>
+  <span class="flyer" aria-hidden="true"><svg viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12 C10 10.2 22 9.3 40 9.3 L60 10.6 C62 11 62 13 60 13.4 L40 14.7 C22 14.7 10 13.8 3 12 Z"/><path d="M24 10.2 L37 2 L43 2 L34 10.4 Z"/><path d="M24 13.8 L37 22 L43 22 L34 13.6 Z"/><path d="M51 10.4 L57 4.2 L60 4.2 L58.4 10.7 Z"/></svg></span>
   <span class="cityscrim" aria-hidden="true"></span>
   <span class="cityhaze" aria-hidden="true"></span>
   <div class="wrap meet-grid">
