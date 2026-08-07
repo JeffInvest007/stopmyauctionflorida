@@ -14,6 +14,10 @@
 <link rel="canonical" href="https://stopmyauctionflorida.com/" />
 <meta name="theme-color" content="#123F38" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7VK9SGKW97"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7VK9SGKW97');</script>
+
 <!-- Social preview -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://stopmyauctionflorida.com/" />
@@ -378,6 +382,27 @@
   .foot-logo-chip{display:inline-flex;align-items:center;background:var(--cream);border-radius:14px;padding:10px 14px}
   .foot-logo-chip img{height:64px;width:auto;display:block}
 
+  /* ===================== MEET COACH JEFF ===================== */
+  .meet{background:linear-gradient(160deg,var(--green-900),var(--green) 58%,var(--green-700));color:#EAF1ED;position:relative;overflow:hidden}
+  .meet::before{content:"";position:absolute;inset:-220px;
+    background-image:radial-gradient(rgba(255,255,255,.055) 1.5px,transparent 1.5px);background-size:26px 26px;
+    animation:dotsDrift 60s linear infinite;pointer-events:none}
+  @keyframes dotsDrift{from{transform:translate(0,0)}to{transform:translate(208px,208px)}}
+  .meet-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;position:relative;z-index:2}
+  .meet-photo{position:relative;display:flex;justify-content:center;align-items:flex-end;min-height:500px}
+  .meet-disk{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:430px;height:430px;border-radius:50%;
+    background:radial-gradient(circle,rgba(194,144,44,.42),rgba(194,144,44,.05) 68%);animation:meetGlow 3.2s ease-in-out infinite}
+  @keyframes meetGlow{0%,100%{opacity:.5}50%{opacity:1}}
+  .meet-ring{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:392px;height:392px;border-radius:50%;border:2px solid rgba(231,199,126,.45)}
+  .meet-photo img{position:relative;z-index:2;max-height:520px;width:auto;filter:drop-shadow(0 26px 44px rgba(0,0,0,.5))}
+  .meet h2{font-size:clamp(2rem,3.6vw,2.7rem);color:#fff;margin:14px 0 16px}
+  .meet-lede{color:#D9E2DC;font-size:1.08rem;margin-bottom:14px;max-width:36em}
+  .meet-sign{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--gold-soft);margin-top:18px}
+  .meet-sign small{display:block;font-family:'Inter';font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#9FB6AD;margin-top:2px}
+  @media (prefers-reduced-motion: reduce){.meet::before,.meet-disk{animation:none}}
+  @media(max-width:880px){.meet-grid{grid-template-columns:1fr;gap:26px}.meet-photo{min-height:400px}.meet-photo img{max-height:420px}
+    .meet-disk{width:330px;height:330px}.meet-ring{width:300px;height:300px}}
+
   /* reveal-on-scroll (degrades gracefully without JS) */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -448,13 +473,15 @@
       </div>
       <div class="hero-cta">
         <a href="#offer" class="btn btn-primary">Get My Free Cash Offer</a>
-                <a href="tel:+17869207419" class="btn btn-outline-light">Call or Text (786) 920-7419</a>
+        <a href="tel:+17869207419" class="btn btn-outline-light">Call (786) 920-7419</a>
+        <a href="sms:+17869207419?body=Hi%2C%20I%20got%20your%20letter%20about%20my%20property." class="btn btn-outline-light">Text Us</a>
       </div>
       <div class="hero-trust">
         <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Florida-focused, locally informed</div>
         <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Close in as little as 7 to 14 days</div>
         <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> No fees, no repairs, no commissions</div>
         <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> We buy directly or bring a partner buyer</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Nou pale krey&ograve;l ayisyen</div>
       </div>
     </div>
     <!-- HERO PHOTO (Pexels, free for commercial use, no attribution required). Swap the src to change it. -->
@@ -684,6 +711,28 @@
   </div>
 </section>
 
+<!-- ===================== MEET COACH JEFF ===================== -->
+<section class="meet">
+  <div class="wrap meet-grid">
+    <div class="meet-photo reveal">
+      <span class="meet-disk" aria-hidden="true"></span>
+      <span class="meet-ring" aria-hidden="true"></span>
+      <img src="assets/jeff.webp" alt="Coach Jeff, founder of Stop My Auction Florida, smiling with arms crossed" width="894" height="1040" loading="lazy" decoding="async">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--gold-soft)">The person who answers the phone</span>
+      <h2>When you call, you get me.</h2>
+      <p class="meet-lede">I'm Coach Jeff, and Stop My Auction Florida is my company. When you call or text, you are not getting a call center or a script. You are getting me. I help South Florida families walk out of foreclosure and tax deed trouble with their equity and their dignity intact, and I will tell you the truth about your options, even when the truth is that selling is not your best move.</p>
+      <p class="meet-lede">Whatever you are facing, you do not have to figure it out alone. You have my number. Use it.</p>
+      <p class="meet-sign">Coach Jeff<small>Founder, Stop My Auction Florida</small></p>
+      <div class="hero-cta" style="margin-top:22px">
+        <a href="tel:+17869207419" class="btn btn-primary">Call Coach Jeff</a>
+        <a href="sms:+17869207419?body=Hi%20Coach%20Jeff%2C%20I%20got%20your%20letter%20about%20my%20property." class="btn btn-outline-light">Text Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
 <section>
   <div class="wrap">
@@ -692,6 +741,8 @@
       <h2>Frequently asked questions</h2>
     </div>
     <div class="faq-wrap">
+      <details class="faq reveal"><summary>How do I know this is not a scam? <span class="plus">+</span></summary><div class="ans">A fair question, and you should ask it about anyone who contacts you about your home. Here is how to check us. You never pay us anything, at any point, for any reason. Closings happen at a licensed Florida title company, and every dollar moves through escrow, never hand to hand. Our company, Probate Assets Elite, LLC, is registered and active with the State of Florida, document number L24000159389, and you can <a href="https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?inquiryType=EntityName&searchTerm=probateassetselite" target="_blank" rel="noopener" style="color:var(--terra);font-weight:600;text-decoration:underline">verify it yourself on the state's official Sunbiz site</a>. And we encourage you to have your own attorney look at anything before you sign it. A legitimate buyer welcomes that.</div></details>
+      <details class="faq reveal"><summary>The home was my parent's and it is still in probate. Can you help? <span class="plus">+</span></summary><div class="ans">Yes. Probate is where we started, it is in our company's name. We work with personal representatives, executors, and heirs every week, and we coordinate with the probate attorney so the sale happens properly and on time. If you inherited a home that is behind on taxes or has a sale date coming, call us. This is exactly what we do.</div></details>
       <details class="faq reveal"><summary>Can you actually stop my auction? <span class="plus">+</span></summary><div class="ans">We can't promise to stop a sale. That depends on your lender, the court or clerk, and timing. What we can do is move quickly to close a cash purchase that pays off the debt before the auction. A signed purchase agreement with a real closing date can also support a motion to cancel or reschedule the sale.</div></details>
       <details class="faq reveal"><summary>How fast can you close? <span class="plus">+</span></summary><div class="ans">With clean title and cooperation from the lender or clerk, closings in as little as 7 to 14 days are realistic in Florida, and sometimes faster. The sooner you reach out before your sale date, the better.</div></details>
       <details class="faq reveal"><summary>Will I get any money out of it? <span class="plus">+</span></summary><div class="ans">If there's equity left after the payoff and standard closing costs, that money is yours. The whole point of selling before the auction is to capture that equity instead of losing it at the sale.</div></details>
@@ -715,8 +766,11 @@
         <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> No obligation to accept</div>
         <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7C77E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Your information stays private</div>
       </div>
-      <p style="margin-top:24px;color:#9FB6AD;font-size:.95rem">Prefer to talk now? Call or text
-                <a href="tel:+17869207419" style="color:var(--gold-soft);font-weight:600">(786) 920-7419</a>.
+      <p style="margin-top:24px;color:#9FB6AD;font-size:.95rem">Prefer to talk now?
+        <a href="tel:+17869207419" style="color:var(--gold-soft);font-weight:600">Call (786) 920-7419</a>,
+        <a href="sms:+17869207419?body=Hi%2C%20I%20got%20your%20letter%20about%20my%20property." style="color:var(--gold-soft);font-weight:600">text us</a>, or
+        <a href="https://wa.me/17869207419?text=Hi%2C%20I%20got%20your%20letter%20about%20my%20property." target="_blank" rel="noopener" style="color:var(--gold-soft);font-weight:600">message us on WhatsApp</a>.
+        <br>Nou pale krey&ograve;l ayisyen.
       </p>
     </div>
     <div class="form-card reveal">
@@ -787,10 +841,13 @@
       <div>
         <h4>Contact</h4>
         <div class="foot-list">
-          <a href="tel:+17869207419">(786) 920-7419</a>
+          <a href="tel:+17869207419">Call (786) 920-7419</a>
+          <a href="sms:+17869207419?body=Hi%2C%20I%20got%20your%20letter%20about%20my%20property.">Text (786) 920-7419</a>
+          <a href="https://wa.me/17869207419?text=Hi%2C%20I%20got%20your%20letter%20about%20my%20property." target="_blank" rel="noopener">WhatsApp us</a>
           <a href="mailto:probateassetselite@gmail.com">probateassetselite@gmail.com</a>
           <a href="https://www.probateassetselite.com">www.probateassetselite.com</a>
           <span>Serving homeowners across Florida</span>
+          <span>Nou pale krey&ograve;l ayisyen</span>
         </div>
       </div>
       <div>
@@ -799,6 +856,7 @@
           <a href="#how-time">How it works</a>
           <a href="#offer">Get a cash offer</a>
           <a href="#top">Foreclosure &amp; tax deed</a>
+          <a href="privacy.html">Privacy policy</a>
         </div>
       </div>
     </div>
@@ -811,8 +869,9 @@
 
 <!-- Mobile quick-action bar: on phones, call and offer are always one thumb away -->
 <nav class="actionbar" aria-label="Quick actions">
-  <a href="tel:+17869207419" class="btn btn-light">Call or Text Now</a>
-  <a href="#offer" class="btn btn-primary">Get My Cash Offer</a>
+  <a href="tel:+17869207419" class="btn btn-light">Call</a>
+  <a href="sms:+17869207419?body=Hi%2C%20I%20got%20your%20letter%20about%20my%20property." class="btn btn-light">Text</a>
+  <a href="#offer" class="btn btn-primary">Cash Offer</a>
 </nav>
 
 <script>
