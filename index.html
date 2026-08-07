@@ -435,11 +435,17 @@
   .cityhaze{position:absolute;left:0;right:0;bottom:0;height:330px;z-index:0;pointer-events:none;
     background:linear-gradient(to top,rgba(96,60,26,.30),rgba(120,74,30,.10) 40%,transparent)}
   .meet-photo img{position:relative;z-index:3;max-height:520px;width:auto;filter:drop-shadow(0 26px 44px rgba(0,0,0,.5))}
+  /* the city establishes first, then Coach Jeff walks in from the left */
+  .meet-photo.reveal{opacity:1;transform:none}
+  .meet-photo img{opacity:0;transform:translateX(-145%)}
+  .meet-photo.in img{opacity:1;transform:translateX(0);
+    transition:opacity .9s ease 2s,transform 1.35s cubic-bezier(.16,.84,.44,1) 2s}
   .meet h2{font-size:clamp(2rem,3.6vw,2.7rem);color:#FFF9EE;margin:14px 0 16px}
   .meet-lede{color:#E6D8BF;font-size:1.08rem;margin-bottom:14px;max-width:36em}
   .meet-sign{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--gold-soft);margin-top:18px}
   .meet-sign small{display:block;font-family:'Inter';font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#CBB088;margin-top:2px}
-  @media (prefers-reduced-motion: reduce){.meet::before,.meet-disk,.aur,.star,.cityscape,.city{animation:none}}
+  @media (prefers-reduced-motion: reduce){.meet::before,.meet-disk,.aur,.star,.cityscape,.city{animation:none}
+    .meet-photo img,.meet-photo.in img{opacity:1;transform:none;transition:none}}
   @media(max-width:880px){.meet-grid{grid-template-columns:1fr;gap:26px}.meet-photo{min-height:400px}.meet-photo img{max-height:420px}
     .meet-disk{width:330px;height:330px}.meet-ring{width:300px;height:300px}.aur{filter:blur(45px)}
     .city-near{height:210px}.city-mid{height:150px}.city-far{height:105px}.cityhaze{height:230px}}
@@ -448,7 +454,7 @@
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
   .reveal.in{opacity:1;transform:none}
 </style>
-<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}.meet-photo img{opacity:1 !important;transform:none !important}</style></noscript>
 
 <script type="application/ld+json">
 {
