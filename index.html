@@ -445,6 +445,22 @@
     .meet-disk{width:330px;height:330px}.meet-ring{width:300px;height:300px}
     .cityhaze{height:230px}.jet{width:104px;top:3%}}
 
+  /* thumbs on the comparison headers */
+  .thumb{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;
+    margin-right:10px;vertical-align:middle;flex:none}
+  .thumb.up{background:rgba(231,199,126,.18);color:var(--gold-soft);box-shadow:0 0 0 1px rgba(231,199,126,.4)}
+  .thumb.dn{background:rgba(188,74,46,.20);color:#E8A18C;box-shadow:0 0 0 1px rgba(188,74,46,.5)}
+  .row.head .cell.good,.row.head .cell.bad{display:flex;align-items:center;justify-content:center;gap:0}
+
+  /* the What sets us apart label breathes so the eye lands on it */
+  .apart{display:block;font-family:'Fraunces',Georgia,serif;font-size:.72rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  .apart-box{animation:apartGlow 3.4s ease-in-out infinite}
+  @keyframes apartGlow{
+    0%,100%{box-shadow:0 0 0 0 rgba(194,144,44,0);border-left-color:rgba(194,144,44,.55)}
+    50%{box-shadow:0 0 18px 1px rgba(194,144,44,.30);border-left-color:rgba(194,144,44,1)}}
+  @media (prefers-reduced-motion: reduce){.apart-box{animation:none}}
+
   /* ===================== PROBATE PATH ===================== */
   .probate{background:linear-gradient(180deg,var(--sand),#EFE4D0);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .probate .wrap{padding-top:72px;padding-bottom:76px}
@@ -635,7 +651,7 @@
         <div class="case-body">
           <h3>Foreclosure auction</h3>
           <p>Behind on the mortgage with a court-ordered sale date approaching? We move fast to get you out from under the debt.</p>
-          <p style="margin-top:6px;padding:12px 14px;background:var(--sand);border-left:4px solid var(--gold);border-radius:10px;color:var(--green-700);font-weight:600"><span style="display:block;font-family:'Fraunces',Georgia,serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px">What sets us apart</span>We deal with your lender and the court so you don't have to, and we close before the judge's sale date.</p>
+          <p class="apart-box" style="margin-top:6px;padding:12px 14px;background:var(--sand);border-left:4px solid var(--gold);border-radius:10px;color:var(--green-700);font-weight:600"><span class="apart">What sets us apart</span>We deal with your lender and the court so you don't have to, and we close before the judge's sale date.</p>
           <ul>
             <li>Cash offer that pays off your mortgage balance</li>
             <li>Close before the judge's sale date</li>
@@ -650,7 +666,7 @@
         <div class="case-body">
           <h3>Tax deed sale</h3>
           <p>Owe back property taxes and the county has set a tax deed auction? You can often still redeem and sell before it's gone.</p>
-          <p style="margin-top:6px;padding:12px 14px;background:var(--sand);border-left:4px solid var(--gold);border-radius:10px;color:var(--green-700);font-weight:600"><span style="display:block;font-family:'Fraunces',Georgia,serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px">What sets us apart</span>We pay off your back taxes at closing, out of our pocket, not yours.</p>
+          <p class="apart-box" style="margin-top:6px;padding:12px 14px;background:var(--sand);border-left:4px solid var(--gold);border-radius:10px;color:var(--green-700);font-weight:600"><span class="apart">What sets us apart</span>We pay off your back taxes at closing, out of our pocket, not yours.</p>
           <ul>
             <li>Cash to clear the tax debt and redeem the property</li>
             <li>Close before the clerk's tax deed sale</li>
@@ -674,8 +690,8 @@
     <div class="table reveal">
       <div class="row head">
         <div class="cell">&nbsp;</div>
-        <div class="cell good">Sell to us first</div>
-        <div class="cell bad">Go to auction</div>
+        <div class="cell good"><span class="thumb up"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none"><path d="M2 10.5h3.4V21H2a1 1 0 0 1-1-1v-8.5a1 1 0 0 1 1-1z"/><path d="M7.4 10.2 12.2 3a1.6 1.6 0 0 1 2.9 1.1l-.8 4.2h5.3a2.2 2.2 0 0 1 2.2 2.7l-1.5 7A2.2 2.2 0 0 1 18 19.8H7.4z"/></svg></span>Sell to us first</div>
+        <div class="cell bad"><span class="thumb dn"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex:none"><path d="M2 3h3.4v10.5H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M7.4 13.8 12.2 21a1.6 1.6 0 0 0 2.9-1.1l-.8-4.2h5.3a2.2 2.2 0 0 0 2.2-2.7l-1.5-7A2.2 2.2 0 0 0 18 4.2H7.4z"/></svg></span>Go to auction</div>
       </div>
       <div class="row">
         <div class="cell label">Your equity</div>
@@ -768,7 +784,7 @@
       <div class="quote reveal">
         <div class="commit-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>The truth, even if it costs us the deal</h3>
-        <p>If keeping the home, redeeming the taxes yourself, or listing with an agent is your better move, we will tell you so. We would rather lose a deal than mislead you.</p>
+        <p>If keeping the home, redeeming the taxes yourself, or listing with an agent is your better move, we will tell you so. We would rather lose a deal than mislead you and your family.</p>
       </div>
     </div>
   </div>
