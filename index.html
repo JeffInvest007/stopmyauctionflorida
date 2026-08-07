@@ -412,7 +412,18 @@
   @keyframes cityPan{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   .cityhalf{width:25%;height:100%;flex:none;
     background:url('assets/miami-skyline.webp') center bottom/cover no-repeat}
-  .cityhalf.flip{transform:scaleX(-1);background-image:url('assets/miami-skyline-jet.webp')}
+  .cityhalf.flip{transform:scaleX(-1)}
+  /* the real jet, released the moment the section scrolls into view */
+  .meet.reveal{opacity:1;transform:none}
+  .jet{position:absolute;top:3.5%;left:100%;width:168px;z-index:0;pointer-events:none;opacity:0;
+    will-change:transform;animation:jetPass 32s linear infinite;animation-play-state:paused}
+  .meet.in .jet{animation-play-state:running}
+  .jet img{display:block;width:100%;height:auto}
+  @keyframes jetPass{
+    0%{transform:translate(0,0);opacity:0}
+    2%{opacity:.9}
+    36%{transform:translate(calc(-100vw - 380px),34px);opacity:.9}
+    38%,100%{transform:translate(calc(-100vw - 380px),34px);opacity:0}}
   .cityscrim{position:absolute;inset:0;z-index:0;pointer-events:none;
     background:linear-gradient(100deg,rgba(18,13,9,.42) 0%,rgba(18,13,9,.20) 30%,rgba(18,13,9,.48) 58%,rgba(18,13,9,.66) 100%)}
   /* warm haze where the skyline meets the sky */
@@ -428,11 +439,11 @@
   .meet-lede{color:#E6D8BF;font-size:1.08rem;margin-bottom:14px;max-width:36em}
   .meet-sign{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--gold-soft);margin-top:18px}
   .meet-sign small{display:block;font-family:'Inter';font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#CBB088;margin-top:2px}
-  @media (prefers-reduced-motion: reduce){.meet-disk,.cityscroll{animation:none}
+  @media (prefers-reduced-motion: reduce){.meet-disk,.cityscroll,.jet{animation:none}
     .meet-photo img,.meet-photo.in img{opacity:1;transform:none;transition:none}}
   @media(max-width:880px){.meet-grid{grid-template-columns:1fr;gap:26px}.meet-photo{min-height:400px}.meet-photo img{max-height:420px}
     .meet-disk{width:330px;height:330px}.meet-ring{width:300px;height:300px}
-    .cityhaze{height:230px}}
+    .cityhaze{height:230px}.jet{width:104px;top:3%}}
 
   /* reveal-on-scroll (degrades gracefully without JS) */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
@@ -743,8 +754,9 @@
 </section>
 
 <!-- ===================== MEET COACH JEFF ===================== -->
-<section class="meet">
+<section class="meet reveal">
   <div class="cityscroll" aria-hidden="true"><span class="cityhalf"></span><span class="cityhalf flip"></span><span class="cityhalf"></span><span class="cityhalf flip"></span></div>
+  <span class="jet" aria-hidden="true"><img src="assets/jet.png" alt="" width="340" height="134" loading="lazy" decoding="async"></span>
   <span class="cityscrim" aria-hidden="true"></span>
   <span class="cityhaze" aria-hidden="true"></span>
   <div class="wrap meet-grid">
