@@ -9,8 +9,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stop My Auction Florida | Sell for Cash Before Your Sale Date</title>
-<meta name="description" content="Auction date set? We buy Florida homes for cash before the foreclosure or tax deed sale. Keep your equity, close in 7 to 14 days, no fees. Call (786) 920-7419." />
+<title>Stop My Auction Florida | Sell Before the Sale, Keep Your Equity</title>
+<meta name="description" content="Need to stop your Florida auction? You still have time to sell for cash and keep your equity. No fees, close in 7 to 14 days. Call (786) 920-7419." />
 <link rel="canonical" href="https://stopmyauctionflorida.com/" />
 <meta name="theme-color" content="#123F38" />
 
@@ -22,16 +22,16 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://stopmyauctionflorida.com/" />
 <meta property="og:site_name" content="Stop My Auction Florida" />
-<meta property="og:title" content="Facing a Florida Auction Date? Keep Your Equity." />
-<meta property="og:description" content="We buy homes for cash before the foreclosure or tax deed sale. No fees, no repairs, close in as little as 7-14 days. Call or text (786) 920-7419." />
+<meta property="og:title" content="Need to Stop Your Florida Auction? You Still Have Time." />
+<meta property="og:description" content="Sell for cash before the foreclosure or tax deed sale and keep your equity. No fees, no repairs, close in 7 to 14 days. Call or text (786) 920-7419." />
 <meta property="og:image" content="https://stopmyauctionflorida.com/assets/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Stop My Auction Florida. Sell for cash before the sale. (786) 920-7419" />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Facing a Florida Auction Date? Keep Your Equity." />
-<meta name="twitter:description" content="We buy homes for cash before the foreclosure or tax deed sale. No fees, no repairs. Call or text (786) 920-7419." />
+<meta name="twitter:title" content="Need to Stop Your Florida Auction? You Still Have Time." />
+<meta name="twitter:description" content="Sell for cash before the foreclosure or tax deed sale and keep your equity. No fees, no repairs. Call or text (786) 920-7419." />
 <meta name="twitter:image" content="https://stopmyauctionflorida.com/assets/og-image.jpg" />
 
 <!-- Icons -->
@@ -664,23 +664,23 @@
   ]
 }
 </script>
-<!-- Lead event tracking: phone, email, form -->
+<!-- Lead event tracking: phone, text, email clicks.
+     Form submits are counted by GA4 Enhanced Measurement as "form_submit" (starred as a key event),
+     and a confirmed lead fires "generate_lead" on thanks.html after Web3Forms accepts the submission.
+     The old custom "form_submission" event was removed so each submit is not counted twice. -->
 <script>
 (function () {
   function send(n, p) { if (typeof gtag === 'function') { gtag('event', n, p); } }
   document.addEventListener('click', function (e) {
     var t = e.target;
-    var a = t && t.closest ? t.closest('a[href^="tel:"], a[href^="mailto:"], a[href^="sms:"]') : null;
+    var a = t && t.closest ? t.closest('a[href^="tel:"], a[href^="mailto:"], a[href^="sms:"], a[href*="wa.me/"]') : null;
     if (!a) return;
     var h = a.getAttribute('href') || '';
-    var n = h.indexOf('tel:') === 0 ? 'phone_call' : (h.indexOf('sms:') === 0 ? 'sms_click' : 'email_click');
-    send(n, { link_url: h, page_location: location.href });
-  }, true);
-  document.addEventListener('submit', function (e) {
-    var f = e.target;
-    var fid = 'unnamed';
-    try { fid = f.id || f.getAttribute('name') || 'unnamed'; } catch (err) {}
-    send('form_submission', { form_id: fid, page_location: location.href });
+    var n = h.indexOf('tel:') === 0 ? 'phone_call'
+          : h.indexOf('sms:') === 0 ? 'sms_click'
+          : h.indexOf('mailto:') === 0 ? 'email_click'
+          : 'whatsapp_click';
+    send(n, { link_url: h, link_text: (a.textContent || '').trim().slice(0, 60), page_location: location.href });
   }, true);
 })();
 </script>
