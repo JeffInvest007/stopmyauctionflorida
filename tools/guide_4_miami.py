@@ -48,7 +48,7 @@ PAGE = dict(
 
 <div class="keyfacts">
   <div class="keyfact"><b>4 websites</b><span>where every Miami-Dade and Broward foreclosure and tax deed sale is scheduled and searchable</span></div>
-  <div class="keyfact"><b>7 to 14 days</b><span>a realistic cash closing at a local title company when there is time on the clock</span></div>
+  <div class="keyfact"><b>About 14 days</b><span>a realistic cash closing at a local title company when there is time on the clock</span></div>
   <div class="keyfact"><b>1 person</b><span>who answers the phone, sees the house, and sits at the closing with you</span></div>
 </div>
 

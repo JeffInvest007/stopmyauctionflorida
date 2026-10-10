@@ -56,7 +56,7 @@ PAGE = dict(
 <p>If you can put your hands on the full redemption amount, do it. Call the tax collector, get the exact figure good through a specific date, and pay it. Keep your house. I say this to people every week, and I mean it. If a family member can lend it, if a refinance can close in time, if there is savings, use it. You do not need me for that.</p>
 <h3>Sell before the sale and pay the taxes at closing</h3>
 <p>If the redemption amount is more than you can raise, or the house has other problems you do not want to carry, the second road is a cash sale that closes before the auction. The tax debt gets paid at the closing table out of the purchase price. The clerk cancels the sale. The equity above the taxes and standard closing costs is wired to you. You walk away with money instead of a memory.</p>
-<p>That is what we do. We buy the house as is, we pay every certificate at closing, and the title company handles the tax collector and the clerk. Closings in 7 to 14 days are realistic when there is time on the clock.</p>
+<p>That is what we do. We buy the house as is, we pay every certificate at closing, and the title company handles the tax collector and the clerk. Closings in about 14 days are realistic when there is time on the clock.</p>
 <div class="callout warn">
   <strong>Be careful who you sign with</strong>
   <p>When a tax deed sale is scheduled, the notice is public. You will get letters and knocks on the door from people who want to buy the house cheap or "help" you for a fee. Never pay anyone a fee to get an offer. Never sign a deed outside a licensed title company. And check any company on the state's Sunbiz site before you talk to them, including mine.</p>

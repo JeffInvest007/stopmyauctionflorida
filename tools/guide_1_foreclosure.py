@@ -13,7 +13,7 @@ PAGE = dict(
   promise_lead="Behind on the mortgage with a court date coming?",
   promise="We buy the house for cash, the payoff clears the judgment at closing, and whatever equity is left above the debt is yours to keep.",
   sms="Hi%20Coach%20Jeff%2C%20I%20have%20a%20foreclosure%20sale%20date%20coming%20up.",
-  trust=["We deal with the lender's attorney so you don't have to", "Close in as little as 7 to 14 days"],
+  trust=["We deal with the lender's attorney so you don't have to", "Close in as little as 14 days"],
   ribbon="Before the gavel falls",
   hero_img="assets/case-foreclosure.jpg", hero_w=820, hero_h=460, hero_pos="center",
   hero_alt="Hand holding house keys in front of an open front door",
@@ -62,7 +62,7 @@ PAGE = dict(
 <p>We buy most houses ourselves. When a deal is more complicated than usual, we bring in a partner buyer we have closed with before, so it still closes on time. Either way you deal with me, from the first call to the closing table.</p>
 
 <h2>How fast this has to move</h2>
-<p>Weeks, not months. With a cooperative lender and clean title, a closing in 7 to 14 days is realistic in Florida. Payoff letters take a few business days. Title work takes a few more. Court paperwork to cancel a sale takes time to get in front of a judge. Every one of those steps gets easier when there are 30 days on the calendar and harder when there are 5.</p>
+<p>Weeks, not months. With a cooperative lender and clean title, a closing in about 14 days is realistic in Florida, and 14 days is the realistic floor. Payoff letters take a few business days. Title work takes a few more. Court paperwork to cancel a sale takes time to get in front of a judge. Every one of those steps gets easier when there are 30 days on the calendar and harder when there are 5.</p>
 <div class="callout warn">
   <strong>If your sale is this week</strong>
   <p>Call me today, not tomorrow. It may still be possible, but it depends on your lender and the court, and I would rather tell you the truth about your odds on the phone than have you find out on sale day.</p>
